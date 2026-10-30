@@ -1,0 +1,29 @@
+class aluno:
+    def __init__(self, nome, nota1, nota2):
+        self.nome = nome
+        self.nota1 = nota1
+        self.nota2 = nota2
+
+    def calcular_media(self):
+        return (self.nota1 + self.nota2) / 2
+
+    def verificar_situacao(self):
+        if self.calcular_media() >= 7:
+            return "APROVADO"
+        else:
+            return "REPROVADO"
+
+nome = input("Digite o seu nome: ")
+nota1 = float(input("digite a primeira nota: "))
+nota2 = float(input("digite a segunda nota: "))
+
+aluno = aluno(nome,nota1,nota2)
+media = aluno.calcular_media()
+situacao = aluno.verificar_situacao()
+
+print("\n--- resultado do aluno")
+print(f"nome: {aluno.nome}")
+print(f"primeira nota: {nota1:.2f}")            
+print(f"segunda nota: {nota2:.2f}")
+print(f"media do aluno: {media}")
+print(f"Situaçao: {situacao}")
